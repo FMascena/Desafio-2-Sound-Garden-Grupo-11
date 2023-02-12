@@ -1,3 +1,4 @@
+import convertDateFormat from "./utils/convertDateFormat.js";
 fetch("https://soundgarden-api.deta.dev/events")
   .then((res) => res.json())
   .then((data) => {
@@ -10,9 +11,12 @@ fetch("https://soundgarden-api.deta.dev/events")
                              .toString()
                              .replaceAll(",", ", ")}</td>
                            <td>
-                                <a href="reservas.html" class="btn btn-dark">ver reservas</a>
-                                <a href="editar-evento.html" class="btn btn-secondary">editar</a>
-                                <a href="excluir-evento.html" class="btn btn-danger">excluir</a>
+                                <a href="reservas.html?id=${data[i]._id}" 
+                                class="btn btn-dark">ver reservas</a>
+                                <a href="editar-evento.html?id=${data[i]._id}" 
+                                class="btn btn-secondary">editar</a>
+                                <a href="excluir-evento.html?id=${data[i]._id}" 
+                                class="btn btn-danger">excluir</a>
                             </td>`;
       const table = document.querySelector(".events-table-body");
       table.appendChild(element);
@@ -23,14 +27,3 @@ fetch("https://soundgarden-api.deta.dev/events")
       "Houve um erro ao realizar a requisição, por favor tente novamente mais tarde."
     );
   });
-
-function convertDateFormat(jsonDate) {
-  date = new Date(jsonDate);
-  return (
-    `${date.getDate().toString().padStart(2, "0")}/` +
-    `${(parseInt(date.getMonth()) + 1).toString().padStart(2, "0")}/` +
-    `${date.getFullYear()} ` +
-    `${date.getHours().toString().padStart(2, "0")}:` +
-    `${date.getMinutes().toString().padStart(2, "0")}`
-  );
-}
