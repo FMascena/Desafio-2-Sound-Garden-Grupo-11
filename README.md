@@ -28,5 +28,5 @@ Colocar em prática conhecimentos de JavaScript e HTML, criando um site com cont
 
 ## Colaboradores:
 - [Felipe Mascena](https://github.com/FMascena)
-- [Thiago Xavier]()
+- [Tiago Xavier](https://github.com/tcx42)
 - [Alexia Tawany]()
