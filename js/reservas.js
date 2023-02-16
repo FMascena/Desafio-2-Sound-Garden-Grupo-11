@@ -24,7 +24,6 @@ async function getReservations(eventId) {
     }
     loader.hide();
   } catch (error) {
-    console.error(error);
     loader.hide();
     alert(
       "Houve um erro ao realizar a requisição, por favor tente novamente mais tarde."
@@ -52,7 +51,6 @@ async function deleteReservation(id) {
         throw new Error("falha na requisição");
       }
     } catch (error) {
-      console.error(error);
       loader.hide();
       alert("Houve um erro com esta requisição");
     }

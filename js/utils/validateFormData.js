@@ -16,7 +16,7 @@ export default function validateFormData({
     }
   }
   if (invalidField) {
-    throw new Error("Empty field");
+    throw new Error("Invalid field");
   }
   return {
     name: name.value.trim(),
@@ -45,6 +45,9 @@ function isFieldValid(property, value) {
   switch (property) {
     case "scheduled":
       return isDateValid(value);
+
+    case "number_tickets":
+      return !isNaN(parseInt(value, 10));
 
     default:
       return value.trim().length > 0;

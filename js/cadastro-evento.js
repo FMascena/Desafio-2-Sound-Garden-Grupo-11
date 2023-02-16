@@ -25,7 +25,6 @@ form.addEventListener("submit", async (e) => {
       );
     }
   } catch (error) {
-    console.log(error);
     alert(
       "Houve um erro ao cadastrar este evento, por favor revise os dados fornecidos"
     );

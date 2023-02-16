@@ -16,7 +16,6 @@ async function main() {
     }
     loader.hide();
   } catch (error) {
-    console.error(error);
     loader.hide();
     alert(
       "Houve um erro ao realizar a requisição, por favor tente novamente mais tarde."
