@@ -8,6 +8,7 @@ form.addEventListener("submit", async (e) => {
   try {
     const formData = validateFormData({
       name: form.elements["nome"],
+      poster: form.elements["banner"],
       attractions: form.elements["atracoes"],
       description: form.elements["descricao"],
       scheduled: form.elements["data"],
