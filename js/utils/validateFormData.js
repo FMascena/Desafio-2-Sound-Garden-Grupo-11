@@ -20,7 +20,7 @@ export default function validateFormData({
   }
   return {
     name: name.value.trim(),
-    poster: poster ? poster.value.trim() : "link da imagem",
+    poster: poster.value.trim(),
     attractions: attractions.value.trim().split(/\s*,\s*/),
     description: description.value.trim(),
     scheduled: parseDate(scheduled.value),
@@ -31,14 +31,20 @@ export default function validateFormData({
 function isDateValid(date) {
   date = date.trim();
   const dateRegex = new RegExp(
-    /^([0-2][0-9]|[3][0-1])(\/)(([0-9])|([0][0-9])|([1][0-2]))(\/)\d{4}(\s+)(00|(0)?[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9])$/
+    /^([0-2][1-9]|[1-3][0-1])(\/)(([1-9])|([0][1-9])|([1][0-2]))(\/)(\d{4}|\d{2})(\s+)(00|(0)?[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9])$/
   );
   return dateRegex.test(date);
 }
 
 function parseDate(date) {
   const [day, month, year, hour, minutes] = date.trim().split(/[\/:]|\s+/);
-  return new Date(year, parseInt(month) - 1, day, hour, minutes).toJSON();
+  return new Date(
+    year <= 99 ? parseInt(year, 10) + 2000 : year,
+    parseInt(month) - 1,
+    day,
+    hour,
+    minutes
+  ).toJSON();
 }
 
 function isFieldValid(property, value) {
@@ -47,7 +53,7 @@ function isFieldValid(property, value) {
       return isDateValid(value);
 
     case "number_tickets":
-      return !isNaN(parseInt(value, 10));
+      return !isNaN(parseInt(value, 10)) && value > 0;
 
     default:
       return value.trim().length > 0;
