@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,46 +12,80 @@
 </head>
 
 <body>
-    <header class=" d-flex justify-content-center align-items-center">
+    <header class="d-flex justify-content-center align-items-center">
         <img src="img/Sound-logo (1).png" width="300" alt="">
     </header>
+
     <main>
         <section class="full d-flex justify-content-center align-items-center"
             style="background-color: #F8BBD0; color: #fff">
+
             <div class="text-center">
-                <h1>Adicione um banner maneiro aqui</h1>
+                <!-- <h1>Adicione um banner maneiro aqui</h1> -->
+                <img id="banner" alt="">
             </div>
         </section>
+
         <section class="full">
             <div class="container text-center">
                 <h2>Próximos eventos</h2>
             </div>
-            <div class="container d-flex justify-content-center align-items-center">
-                <article class="evento card p-5 m-3">
+            <div
+              id="eventosIndex"
+              class="container d-flex justify-content-center align-items-center"
+            ></div>
+
+                <!-- <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
                     <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
                     <a href="#" class="btn btn-primary">reservar ingresso</a>
-                </article>
-                <article class="evento card p-5 m-3">
-                    <h2>nome do evento - 05/03/2022</h2>
-                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
-                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
-                        nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
-                </article>
-                <article class="evento card p-5 m-3">
-                    <h2>nome do evento - 05/03/2022</h2>
-                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
-                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
-                        nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
-                </article>
+                </article> -->
+
+            <!-- Reservar ingresso modal -->
+            <div id="telaModalIndex" id_evento class="modal">
+              <div class="modal-content">
+                <span id="closeBtn" class="close">&times;</span>
+                <p>
+                  Para reservar seu ingresso neste evento, preencha os campos abaixo com seus dados! :)
+                </p>
+                <form class="col-6" id="create-event-form">
+                  <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nome"
+                      aria-describedby="nome"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Seu melhor email</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Qtd de Ingressos</label>
+                    <input
+                    type="number"
+                    class="form-control"
+                    id="qtdIngresso"
+                    aria-describedby="number"
+                    />
+                  </div>
+                  <br/>
+                  <button type="submit" class="btn btn-primary">enviar</button>
+                </form>
+              </div>
             </div>
+            <!-- Fim do modal-->
+
             <div class="container text-center">
                 <a href="eventos.html" class="btn btn-secondary">ver todos os eventos</a>
             </div>
@@ -104,6 +138,7 @@
             </nav>
         </div>
     </footer>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
