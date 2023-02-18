@@ -62,7 +62,7 @@ async function fazerReservaIngresso() {
   const ingressos = document.getElementById('qtdIngresso').value
   const id = modal.getAttribute('id_evento')
 
-  const URL_RESERVA = 'https://soundgarden-api.vercel.app//bookings'
+  const URL_RESERVA = 'https://soundgarden-api.vercel.app/bookings'
 
   const reserva = {
     owner_name: nome,
