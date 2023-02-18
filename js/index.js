@@ -19,7 +19,7 @@ async function mostrarEventos() {
         <p>
           ${evento.description}
         </p>
-        <button class="btn btn-primary" id=${evento._id} onclick='abrirModalIndex()'>Reservar Ingresso</button>
+        <button class="btn btn-primary" id=${evento._id} onclick='abrirModalIndex()'>reservar Ingresso</button>
       </article>
       `
 
@@ -50,19 +50,22 @@ function abrirModalIndex() {
   modal.setAttribute('id_evento', event.target.id)
 }
 
-// Reservae ingresso para evento onsubmit
+// Reservar ingresso para evento onsubmit
 
 const form = document.querySelector('#telaModalIndex form')
 form.addEventListener('submit', fazerReservaIngresso)
 
-async function fazerReservaIngresso() {
+console.log(form);
+
+async function fazerReservaIngresso(event) {
+  console.log("teste");
   event.preventDefault()
   const nome = document.getElementById('nome').value
   const email = document.getElementById('email').value
   const ingressos = document.getElementById('qtdIngresso').value
   const id = modal.getAttribute('id_evento')
 
-  const URL_RESERVA = 'https://soundgarden-api.vercel.app//bookings'
+  const URL_RESERVA = 'https://soundgarden-api.vercel.app/bookings'
 
   const reserva = {
     owner_name: nome,

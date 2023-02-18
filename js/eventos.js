@@ -21,7 +21,7 @@ async function verTodosEventos() {
             <p>
               ${evento.description}
             </p>
-            <button class="btn btn-primary" id=${evento._id} onclick='abrirModal()'>Reservar Ingresso</button>
+            <button class="btn btn-primary" id=${evento._id} onclick='abrirModal()'>reservar Ingresso</button>
           </article>
       `
 
