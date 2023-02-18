@@ -20,7 +20,7 @@ Projeto feito no Desafio 2 do Gama Experience #48, onde recebemos um projeto ref
 - Github
 
 ## Como acessar:
-(Em andamento)
+[Clique aqui!](https://fmascena.github.io/Desafio-2-Sound-Garden-Grupo-11/)
 
 ## Colaboradores:
 | [<img src="https://avatars.githubusercontent.com/u/119469019?v=4" width=115><br><sub>Felipe Mascena</sub>](https://github.com/FMascena) |  [<img src="https://avatars.githubusercontent.com/u/27393149?v=4" width=115><br><sub>Tiago Xavier</sub>](https://github.com/tcx42) |  [<img src="https://avatars.githubusercontent.com/u/86585782?v=4" width=115><br><sub>Alexia Tawany</sub>](https://github.com/alexiatawanysil) |
