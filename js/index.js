@@ -9,9 +9,10 @@ async function mostrarEventos() {
     const primeirosEventos = data.slice(0, 3)
 
     primeirosEventos.forEach(evento => {
-      // Formatando data do evento, pela API ela vem em formato ISO, transformei para o formato local (Br)
+      // Formatando data do evento, pela API ela vem em formato ISO, transformei para o formato local
       let dataEvento = new Date(evento.scheduled).toLocaleString()
 
+      // Para cada evento da API aparecer na página
       let html = `
       <article class="evento card p-5 m-3">
         <h2>${evento.name} - ${dataEvento}</h2>
@@ -19,10 +20,11 @@ async function mostrarEventos() {
         <p>
           ${evento.description}
         </p>
-        <button class="btn btn-primary" id=${evento._id} onclick='abrirModalIndex()'>reservar Ingresso</button>
+        <button class="btn btn-primary" id=${evento._id} onclick='abrirModalIndex(event)'>reservar Ingresso</button>
       </article>
       `
-
+      
+      // Concatenando para que cada evento seja adicionado na variável e apareça na página
       eventosMuralIndex.innerHTML += html
     })
 
@@ -31,24 +33,30 @@ async function mostrarEventos() {
     console.log(error)
   }
 }
+
 // Chamando função para listar eventos no DOM
 mostrarEventos()
-
-// Modal com formulário para reservar o ingresso do evento
 
 // Função para redirecionar o usuário para a página eventos.html
 function redirecionar() {
   window.location.href = 'index.html'
 }
 
+// Modal com formulário para reservar o ingresso do evento
+
 const modal = document.querySelector('#telaModalIndex')
 
 function abrirModalIndex(event) {
-  // console.log('Modal aberto')
-  event.preventDefault()
-  modal.style.display = 'block'
-  modal.setAttribute('id_evento', event.target.id)
+  event.preventDefault();
+  modal.style.display = 'block';
+  modal.setAttribute('id_evento', event.target.id);
 }
+
+const mybutton = document.querySelector(".btn-primary");
+
+mybutton.addEventListener("click", function(event) {
+  abrirModalIndex(event);
+});
 
 // Reservar ingresso para evento onsubmit
 
@@ -59,7 +67,7 @@ console.log(form);
 
 async function fazerReservaIngresso(event) {
   console.log("teste");
-  event.preventDefault()
+  event.preventDefault();
   const nome = document.getElementById('nome').value
   const email = document.getElementById('email').value
   const ingressos = document.getElementById('qtdIngresso').value

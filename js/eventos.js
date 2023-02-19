@@ -16,13 +16,13 @@ async function verTodosEventos() {
       // Para cada evento da API aparecer na página
       let html = `
       <article class="evento card p-5 m-3">
-            <h2>${evento.name} - ${dataEvento}</h2>
-            <h4>${evento.attractions}</h4>
-            <p>
-              ${evento.description}
-            </p>
-            <button class="btn btn-primary" id=${evento._id} onclick='abrirModal()'>reservar Ingresso</button>
-          </article>
+        <h2>${evento.name} - ${dataEvento}</h2>
+        <h4>${evento.attractions}</h4>
+        <p>
+          ${evento.description}
+        </p>
+        <button class="btn btn-primary" id=${evento._id} onclick='abrirModal(event)'>reservar Ingresso</button>
+      </article>
       `
 
       // Concatenando para que cada evento seja adicionado na variável e apareça na página
@@ -41,22 +41,32 @@ function redirecionar() {
   window.location.href = 'eventos.html'
 }
 
-// MODAL
+// Modal com formulário para reservar o ingresso do evento
+
 const modal = document.querySelector('#telaModal')
 
 function abrirModal(event) {
-  event.preventDefault()
-  modal.style.display = 'block'
-  modal.setAttribute('id_evento', event.target.id)
+  event.preventDefault();
+  modal.style.display = 'block';
+  modal.setAttribute('id_evento', event.target.id);
 }
+
+const mybutton = document.querySelector(".btn-primary");
+
+mybutton.addEventListener("click", function(event) {
+  abrirModalIndex(event);
+});
 
 // Reservar ingresso para evento onsubmit
 
 const form = document.querySelector('#telaModal form')
 form.addEventListener('submit', fazerReservaIngresso)
 
+console.log(form);
+
 async function fazerReservaIngresso(event) {
-  event.preventDefault()
+  console.log("teste");
+  event.preventDefault();
   const nome = document.getElementById('nome').value
   const email = document.getElementById('email').value
   const ingressos = document.getElementById('qtdIngresso').value
