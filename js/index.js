@@ -52,11 +52,6 @@ function abrirModalIndex(event) {
   modal.setAttribute('id_evento', event.target.id);
 }
 
-const mybutton = document.querySelector(".btn-primary");
-
-mybutton.addEventListener("click", function(event) {
-  abrirModalIndex(event);
-});
 
 // Reservar ingresso para evento onsubmit
 
@@ -88,6 +83,7 @@ async function fazerReservaIngresso(event) {
       body: JSON.stringify(reserva),
       headers: { 'Content-type': 'application/json' }
     })
+    console.log(reserva)
 
     if (response.ok) {
       alert('Reserva Efetuada! Aproveite seu evento!')
