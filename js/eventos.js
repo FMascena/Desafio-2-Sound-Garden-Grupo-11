@@ -44,7 +44,7 @@ function redirecionar() {
 // MODAL
 const modal = document.querySelector('#telaModal')
 
-function abrirModal() {
+function abrirModal(event) {
   event.preventDefault()
   modal.style.display = 'block'
   modal.setAttribute('id_evento', event.target.id)
@@ -55,7 +55,7 @@ function abrirModal() {
 const form = document.querySelector('#telaModal form')
 form.addEventListener('submit', fazerReservaIngresso)
 
-async function fazerReservaIngresso() {
+async function fazerReservaIngresso(event) {
   event.preventDefault()
   const nome = document.getElementById('nome').value
   const email = document.getElementById('email').value

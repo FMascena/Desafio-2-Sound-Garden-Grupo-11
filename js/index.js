@@ -43,7 +43,7 @@ function redirecionar() {
 
 const modal = document.querySelector('#telaModalIndex')
 
-function abrirModalIndex() {
+function abrirModalIndex(event) {
   // console.log('Modal aberto')
   event.preventDefault()
   modal.style.display = 'block'
