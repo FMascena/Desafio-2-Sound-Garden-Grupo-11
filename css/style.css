@@ -96,3 +96,37 @@ footer nav ul li  {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media (max-width: 400px) {
+
+#img-last {
+    width: 100vw;
+}
+
+#footer-logo {
+    display: none;
+}
+
+}
+
+@media (max-width: 768px) {
+
+#banner {
+    width: 100%;
+    height: 30vh;
+}
+
+#eventosIndex {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    width: 80%;
+}
+
+.form-control {
+    width: auto;
+}
+
+}
